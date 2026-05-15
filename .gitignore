@@ -1,5 +1,5 @@
 # Project specific
-data/*.tiff
+data/*.tif
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
