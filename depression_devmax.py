@@ -3,8 +3,8 @@ from whitebox_workflows import WbEnvironment
 
 def depression_devmax(
         filepath_input_dem: str,
-        filepath_out_depression_devmax: str,
-        filepath_out_depression_devscale: str,
+        filepath_out_depression_devmax_base: str,
+        filepath_out_depression_devscale_base: str,
         min_scale: int,
         max_scale: int,
         step_size: int
@@ -23,10 +23,10 @@ def depression_devmax(
     ----------
     filepath_input_dem : str
         Path to the input Digital Elevation Model (DEM) or Digital Terrain Model (DTM) raster.
-    filepath_out_depression_devmax : str
-        Output path for the maximum elevation deviation raster.
-    filepath_out_depression_devscale : str
-        Output path for the scale raster corresponding to max deviation.
+    filepath_out_depression_devmax_base : str
+        Output pathbase for the maximum elevation deviation raster.
+    filepath_out_depression_devscale_base : str
+        Output pathbase for the scale raster corresponding to max deviation.
     min_scale : int
         Minimum filter/window size (in pixels) for multiscale analysis.
     max_scale : int
@@ -40,6 +40,20 @@ def depression_devmax(
         Results are written to disk as raster files.
     """
     try:
+        # Build out file paths
+        filepath_out_depression_devmax = filepath_out_depression_devmax_base + \
+            f"_min{min_scale}" + \
+            f"_max{max_scale}" + \
+            f"_stp{step_size}" + \
+            ".tif"
+        print(f"filepath_out_depression_devmax: {filepath_out_depression_devmax}")
+        filepath_out_depression_devscale = filepath_out_depression_devscale_base + \
+            f"_min{min_scale}" + \
+            f"_max{max_scale}" + \
+            f"_stp{step_size}" + \
+            ".tif"
+        print(f"filepath_out_depression_devscale: {filepath_out_depression_devscale}")
+
         # Initialize Whitebox environment
         wbe = WbEnvironment()
         wbe.working_directory = "."  # Set working directory
@@ -73,8 +87,8 @@ if __name__ == "__main__":
     # Example execution with specified input/output paths and scale parameters
     depression_devmax(
         filepath_input_dem="data/merged_dtm_elora.tif",
-        filepath_out_depression_devmax="data/depression_devmax.tif",
-        filepath_out_depression_devscale="data/depression_devscale.tif",
+        filepath_out_depression_devmax_base="data/depression_devmax",
+        filepath_out_depression_devscale_base="data/depression_devscale",
         min_scale=1,
         max_scale=100,
         step_size=1
