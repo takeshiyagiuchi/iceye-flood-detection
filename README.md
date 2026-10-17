@@ -1,15 +1,136 @@
-# ICEYE Flood Detection
+# Flood Detection in Agricultural Fields Using High-Resolution SAR Imagery and Deep Learning
 
-## Abstract
+<p style="font-size: 1.4em;">DATA*6700 Master of Data Science Project | University of Guelph</p>
 
-Waterlogging in agricultural fields can negatively affect soil conditions and agricultural operations, but detecting small-scale waterlogging using satellite imagery remains challenging. In particular, the limited availability of field-verified flooding evidence makes it difficult to train and evaluate conventional image segmentation models. This study proposes a deep learning approach that combines a Siamese Network and Grad-CAM to detect potential waterlogged areas from high-resolution ICEYE Synthetic Aperture Radar (SAR) imagery without requiring pixel-level segmentation labels.
+<br>
 
-The proposed model takes a pair of SAR images acquired at different times and predicts precipitation conditions between the acquisitions. ResNet-18 is used as the shared backbone of the Siamese Network to extract spatial features from the two images. Terrain information, vegetation information, and SAR acquisition metadata are also incorporated as additional inputs. Grad-CAM is applied to the final convolutional layer of ResNet-18 to identify spatial regions contributing to the precipitation prediction. The hypothesis is that spatial features associated with waterlogging may contribute to precipitation prediction and consequently be highlighted by Grad-CAM.
+## Project Overview
 
-A dataset consisting of 960 image pairs was constructed from ICEYE imagery acquired over the Elora Research Station in Ontario, Canada, during 2024 and 2025. The dataset was divided into 720 training, 180 validation, and 60 test pairs. Due to the limited field evidence, synthetic test patches were created to enable quantitative evaluation of the spatial overlap between Grad-CAM highlights and field-verified flooded areas.
+Project Overview
 
-The results show that both classification and regression models can predict precipitation events with reasonable performance, while Grad-CAM produces spatial highlights in most test patches. However, the highlights do not consistently correspond to waterlogged areas and can also react to other land cover types and unchanged dry areas. Therefore, although the proposed approach demonstrates the potential for flood detection without pixel-level annotations, further field-verified data and improved evaluation methods are required to establish its reliability.
+This project investigates agricultural flood detection using multi-temporal, high-resolution ICEYE Synthetic Aperture Radar (SAR) imagery over the Elora Research Station in Ontario, Canada. A Siamese Network with a shared ResNet-18 backbone is developed to analyze changes between SAR images acquired at different times and identify potential flooding.
 
+The project also explores model explainability using Grad-CAM to investigate which spatial features contribute to model predictions. Because detailed pixel-level ground-truth flood masks are unavailable, a controlled-patch evaluation approach is developed to quantitatively assess the spatial relevance of Grad-CAM highlights using field-verified flood locations.
+
+<p align="center">
+  <img src="report/figures/fig1.png" width="600">
+</p>
+<p align="center">
+  <em>Figure 1. Examples of Waterlogging in the Study Area. Photographs provided by Dr. Berg and Abbey Papadimitriou.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig2.png" width="300">
+</p>
+<p align="center">
+  <em>Figure 2. Study Area and Test Patch Locations. The left map shows the Elora Research Station, including four field-verified areas outlined by orange polygons and the extent of one SAR image. The right map shows the locations of the 30 test patches.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig3.png" width="600">
+</p>
+<p align="center">
+  <em>Figure 3. Model Architecture.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig4.png" width="600">
+</p>
+<p align="center">
+  <em>Figure 4. Depression Map and Sample NDVI Image.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig5.png" width="300">
+</p>
+<p align="center">
+  <em>Figure 5. Training Patch Locations.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig6.png" width="300">
+</p>
+<p align="center">
+  <em>Figure 6. Training and Validation Curves for the Classification and Regression Models.</em>
+</p>
+
+<br><br>
+
+<div align="center">
+**Table 1. Precipitation Prediction Scores (Normal)**
+
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| Classification | 86.7 | 86.7 | 86.7 | 86.7 |
+| Regression | 86.7 | 86.7 | 86.7 | 86.7 |
+</div>
+
+<br><br>
+
+<div align="center">
+**Table 2. Precipitation Prediction Scores (Controlled)**
+
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| Classification | 73.3 | 84.0 | 70.0 | 76.4 |
+| Regression | 86.7 | 86.7 | 86.7 | 86.7 |
+</div>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig7.png" width="300">
+</p>
+<p align="center">
+  <em>Figure 7. Scatter Plots between Classification Probablilities and Regression Predictions.</em>
+</p>
+
+<br><br>
+
+<p align="center"><strong>Table 3. Flood Detection Scores</strong></p>
+
+<div align="center">
+**Table 3. Flood Detection Scores**
+
+| Model | Accuracy | Precision | Recall | F1 |
+|---|---:|---:|---:|---:|
+| Classification | 70.0 | 80.0 | 53.3 | 64.0 |
+| Regression | 75.0 | 82.6 | 63.3 | 71.7 |
+</div>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig8.png" width="300">
+</p>
+<p align="center">
+  <em>Figure 8. Example Patch Groups.</em>
+</p>
+
+<br><br>
+
+<p align="center">
+  <img src="report/figures/fig9.png" width="600">
+</p>
+<p align="center">
+  <em>Figure 9. Correlation Boxplots between Grad-CAM highlight and Several Images.</em>
+</p>
+
+For detailed methodology, experiments, and analysis:
+
+- [Wetland Segmentation Report](report/iceye-flood-detection-report.md)
+
+<br>
 
 ## Repository Structure
 
