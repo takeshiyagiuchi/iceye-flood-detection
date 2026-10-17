@@ -176,8 +176,9 @@ Overall, the scores decrease from the normal patches to the controlled patches, 
 
 The scatter plots do not show clear trends associated with land cover types, except that the predictions appear less accurate for vegetation patches (Figure 7). For the classification model, six patches moved below the prediction threshold and one patch moved above the threshold when changing from the normal patches to the controlled patches. For the regression model, two patches moved below the corresponding prediction threshold. Even when a prediction does not cross a threshold, some patches show decreased predictions while others show increased predictions. Some patches also remain at relatively high prediction values after the synthetic control process.
 
+<p align="center"><strong>Table 1. Precipitation Prediction Scores (Normal)</strong></p>
+
 <div align="center">
-**Table 1. Precipitation Prediction Scores (Normal)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
@@ -185,8 +186,9 @@ The scatter plots do not show clear trends associated with land cover types, exc
 | Regression | 86.7 | 86.7 | 86.7 | 86.7 |
 </div>
 
+<p align="center"><strong>Table 2. Precipitation Prediction Scores (Controlled)</strong></p>
+
 <div align="center">
-**Table 2. Precipitation Prediction Scores (Controlled)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
@@ -204,8 +206,9 @@ The scatter plots do not show clear trends associated with land cover types, exc
 ### 3.3. Flood Detection
 Table 3 shows the flood detection scores. Compared with the precipitation prediction scores for the controlled patches (Table 2), accuracy and precision remain at similar levels, while recall decreases substantially for both the classification and regression models, by approximately 16% and 23%, respectively. These decreases in recall also result in lower F1-scores.
 
+<p align="center"><strong>Table 3. Flood Detection Scores</strong></p>
+
 <div align="center">
-**Table 3. Flood Detection Scores**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|

@@ -66,8 +66,9 @@ The project also explores model explainability using Grad-CAM to investigate whi
 
 <br><br>
 
+<p align="center"><strong>Table 1. Precipitation Prediction Scores (Normal)</strong></p>
+
 <div align="center">
-**Table 1. Precipitation Prediction Scores (Normal)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
@@ -77,8 +78,9 @@ The project also explores model explainability using Grad-CAM to investigate whi
 
 <br><br>
 
+<p align="center"><strong>Table 2. Precipitation Prediction Scores (Controlled)</strong></p>
+
 <div align="center">
-**Table 2. Precipitation Prediction Scores (Controlled)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
@@ -100,7 +102,6 @@ The project also explores model explainability using Grad-CAM to investigate whi
 <p align="center"><strong>Table 3. Flood Detection Scores</strong></p>
 
 <div align="center">
-**Table 3. Flood Detection Scores**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
