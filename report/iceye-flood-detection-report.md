@@ -176,19 +176,23 @@ Overall, the scores decrease from the normal patches to the controlled patches, 
 
 The scatter plots do not show clear trends associated with land cover types, except that the predictions appear less accurate for vegetation patches (Figure 7). For the classification model, six patches moved below the prediction threshold and one patch moved above the threshold when changing from the normal patches to the controlled patches. For the regression model, two patches moved below the corresponding prediction threshold. Even when a prediction does not cross a threshold, some patches show decreased predictions while others show increased predictions. Some patches also remain at relatively high prediction values after the synthetic control process.
 
+<div align="center">
 **Table 1. Precipitation Prediction Scores (Normal)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
 | Classification | 86.7 | 86.7 | 86.7 | 86.7 |
 | Regression | 86.7 | 86.7 | 86.7 | 86.7 |
+</div>
 
+<div align="center">
 **Table 2. Precipitation Prediction Scores (Controlled)**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
 | Classification | 73.3 | 84.0 | 70.0 | 76.4 |
 | Regression | 86.7 | 86.7 | 86.7 | 86.7 |
+</div>
 
 <p align="center">
   <img src="figures/fig7.png" width="300">
@@ -200,12 +204,14 @@ The scatter plots do not show clear trends associated with land cover types, exc
 ### 3.3. Flood Detection
 Table 3 shows the flood detection scores. Compared with the precipitation prediction scores for the controlled patches (Table 2), accuracy and precision remain at similar levels, while recall decreases substantially for both the classification and regression models, by approximately 16% and 23%, respectively. These decreases in recall also result in lower F1-scores.
 
+<div align="center">
 **Table 3. Flood Detection Scores**
 
 | Model | Accuracy | Precision | Recall | F1 |
 |---|---:|---:|---:|---:|
 | Classification | 70.0 | 80.0 | 53.3 | 64.0 |
 | Regression | 75.0 | 82.6 | 63.3 | 71.7 |
+</div>
 
 
 ### 3.4. Grad-CAM Reaction Examples
