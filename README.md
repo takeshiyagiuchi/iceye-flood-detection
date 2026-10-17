@@ -164,7 +164,7 @@ The project also explores model explainability using Grad-CAM to investigate whi
 
 <br><br>
 
-<p align="center"><strong>Table 5. Ablation study - Flood Detection</strong></p>
+<p align="center"><strong>Table 6. Ablation study - Flood Detection</strong></p>
 
 <div align="center">
 

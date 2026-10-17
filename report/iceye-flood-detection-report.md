@@ -272,7 +272,7 @@ In this ablation study, I evaluated several input combinations to investigate th
 | SAR-only | Regression | 25 | 5 | 10 | 20 | 0.75 | 0.71 | 0.83 | 0.77 |
 </div>
 
-<p align="center"><strong>Table 5. Ablation study - Flood Detection</strong></p>
+<p align="center"><strong>Table 6. Ablation study - Flood Detection</strong></p>
 
 <div align="center">
 
