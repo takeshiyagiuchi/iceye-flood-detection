@@ -120,6 +120,72 @@ The project also explores model explainability using Grad-CAM to investigate whi
 
 <br><br>
 
+<p align="center"><strong>Table 4. Ablation study - Precipitation Prediction (Normal)</strong></p>
+
+<div align="center">
+
+| Input Combination | Model | TP | FN | FP | TN | Accuracy | Precision | Recall | F1-score |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| SAR + NDVI + dep + meta | Classification | 26 | 4 | 4 | 26 | 0.87 | 0.87 | 0.87 | 0.87 |
+| SAR + NDVI + dep + meta | Regression | 28 | 2 | 4 | 26 | 0.90 | 0.88 | 0.93 | 0.90 |
+| SAR + dep + meta | Classification | 28 | 2 | 9 | 21 | 0.82 | 0.76 | 0.93 | 0.84 |
+| SAR + dep + meta | Regression | 27 | 3 | 5 | 25 | 0.87 | 0.84 | 0.90 | 0.87 |
+| SAR + NDVI + meta | Classification | 25 | 5 | 5 | 25 | 0.83 | 0.83 | 0.83 | 0.83 |
+| SAR + NDVI + meta | Regression | 22 | 8 | 6 | 24 | 0.77 | 0.79 | 0.73 | 0.76 |
+| SAR + NDVI + dep | Classification | 26 | 4 | 8 | 22 | 0.80 | 0.76 | 0.87 | 0.81 |
+| SAR + NDVI + dep | Regression | 26 | 4 | 15 | 15 | 0.68 | 0.63 | 0.87 | 0.73 |
+| SAR + meta | Classification | 25 | 5 | 2 | 28 | 0.88 | 0.93 | 0.83 | 0.88 |
+| SAR + meta | Regression | 23 | 7 | 6 | 24 | 0.78 | 0.79 | 0.77 | 0.78 |
+| SAR-only | Classification | 27 | 3 | 7 | 23 | 0.83 | 0.79 | 0.90 | 0.84 |
+| SAR-only | Regression | 26 | 4 | 10 | 20 | 0.77 | 0.72 | 0.87 | 0.79 |
+</div>
+
+<br><br>
+
+<p align="center"><strong>Table 5. Ablation study - Precipitation Prediction (Controlled)</strong></p>
+
+<div align="center">
+
+| Input Combination | Model | TP | FN | FP | TN | Accuracy | Precision | Recall | F1-score |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| SAR + NDVI + dep + meta | Classification | 22 | 8 | 4 | 26 | 0.80 | 0.85 | 0.73 | 0.79 |
+| SAR + NDVI + dep + meta | Regression | 26 | 4 | 5 | 25 | 0.85 | 0.84 | 0.87 | 0.85 |
+| SAR + dep + meta | Classification | 25 | 5 | 9 | 21 | 0.77 | 0.74 | 0.83 | 0.78 |
+| SAR + dep + meta | Regression | 24 | 6 | 5 | 25 | 0.82 | 0.83 | 0.80 | 0.81 |
+| SAR + NDVI + meta | Classification | 27 | 3 | 5 | 25 | 0.87 | 0.84 | 0.90 | 0.87 |
+| SAR + NDVI + meta | Regression | 21 | 9 | 6 | 24 | 0.75 | 0.78 | 0.70 | 0.74 |
+| SAR + NDVI + dep | Classification | 22 | 8 | 8 | 22 | 0.73 | 0.73 | 0.73 | 0.73 |
+| SAR + NDVI + dep | Regression | 22 | 8 | 15 | 15 | 0.62 | 0.59 | 0.73 | 0.66 |
+| SAR + meta | Classification | 21 | 9 | 2 | 28 | 0.82 | 0.91 | 0.70 | 0.79 |
+| SAR + meta | Regression | 20 | 10 | 6 | 24 | 0.73 | 0.77 | 0.67 | 0.71 |
+| SAR-only | Classification | 20 | 10 | 7 | 23 | 0.72 | 0.74 | 0.67 | 0.70 |
+| SAR-only | Regression | 25 | 5 | 10 | 20 | 0.75 | 0.71 | 0.83 | 0.77 |
+</div>
+
+<br><br>
+
+<p align="center"><strong>Table 5. Ablation study - Flood Detection</strong></p>
+
+<div align="center">
+
+| Input Combination | Model | TP | FN | FP | TN | Accuracy | Precision | Recall | F1-score |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| SAR + NDVI + dep + meta | Classification | 17 | 13 | 2 | 28 | 0.75 | 0.89 | 0.57 | 0.69 |
+| SAR + NDVI + dep + meta | Regression | 20 | 10 | 5 | 25 | 0.75 | 0.80 | 0.67 | 0.73 |
+| SAR + dep + meta | Classification | 22 | 8 | 8 | 22 | 0.73 | 0.73 | 0.73 | 0.73 |
+| SAR + dep + meta | Regression | 20 | 10 | 5 | 25 | 0.75 | 0.80 | 0.67 | 0.73 |
+| SAR + NDVI + meta | Classification | 22 | 8 | 4 | 26 | 0.80 | 0.85 | 0.73 | 0.79 |
+| SAR + NDVI + meta | Regression | 17 | 13 | 6 | 24 | 0.68 | 0.74 | 0.57 | 0.64 |
+| SAR + NDVI + dep | Classification | 17 | 13 | 5 | 25 | 0.70 | 0.77 | 0.57 | 0.65 |
+| SAR + NDVI + dep | Regression | 16 | 14 | 15 | 15 | 0.52 | 0.52 | 0.53 | 0.52 |
+| SAR + meta | Classification | 19 | 11 | 2 | 28 | 0.78 | 0.90 | 0.63 | 0.75 |
+| SAR + meta | Regression | 17 | 13 | 6 | 24 | 0.68 | 0.74 | 0.57 | 0.64 |
+| SAR-only | Classification | 15 | 15 | 5 | 25 | 0.67 | 0.75 | 0.50 | 0.60 |
+| SAR-only | Regression | 18 | 12 | 10 | 20 | 0.63 | 0.64 | 0.60 | 0.62 |
+</div>
+
+<br><br>
+
 <p align="center">
   <img src="report/figures/fig9.png" width="600">
 </p>
